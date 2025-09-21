@@ -41,12 +41,6 @@ function switchLanguage(lang) {
     localStorage.setItem('preferredLanguage', lang);
 }
 
-// Load saved language preference
-document.addEventListener('DOMContentLoaded', function() {
-    const savedLang = localStorage.getItem('preferredLanguage') || 'ar';
-    switchLanguage(savedLang);
-});
-
 // Modal functionality
 function showMenu() {
     const modal = document.getElementById('menuModal');
@@ -97,6 +91,10 @@ document.head.appendChild(style);
 
 // Add interactive effects
 document.addEventListener('DOMContentLoaded', function() {
+    // Load saved language preference
+    const savedLang = localStorage.getItem('preferredLanguage') || 'ar';
+    switchLanguage(savedLang);
+    
     // Add hover effects to social buttons
     const socialButtons = document.querySelectorAll('.social-btn');
     socialButtons.forEach(button => {
@@ -113,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const menuItems = document.querySelectorAll('.menu-item');
     menuItems.forEach(item => {
         item.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateX(5px)';
+            this.style.transform = currentLanguage === 'ar' ? 'translateX(5px)' : 'translateX(-5px)';
         });
         
         item.addEventListener('mouseleave', function() {
@@ -123,15 +121,17 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Add click animation to menu button
     const menuButton = document.querySelector('.menu-btn');
-    menuButton.addEventListener('click', function() {
-        this.style.transform = 'scale(0.95)';
-        setTimeout(() => {
-            this.style.transform = 'scale(1)';
-        }, 150);
-    });
+    if (menuButton) {
+        menuButton.addEventListener('click', function() {
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 150);
+        });
+    }
     
     // Add floating animation to logo
-    const logo = document.querySelector('.logo-circle');
+    const logo = document.querySelector('.logo-ring');
     if (logo) {
         let floatDirection = 1;
         
@@ -149,11 +149,19 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Add sparkle effect
     createSparkles();
+    
+    // Performance optimization
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').catch(() => {
+            // Service worker registration failed, but that's okay
+        });
+    }
 });
 
 // Sparkle effect function
 function createSparkles() {
     const container = document.querySelector('.profile-card');
+    if (!container) return;
     
     setInterval(() => {
         const sparkle = document.createElement('div');
@@ -174,7 +182,9 @@ function createSparkles() {
         container.appendChild(sparkle);
         
         setTimeout(() => {
-            sparkle.remove();
+            if (sparkle.parentNode) {
+                sparkle.remove();
+            }
         }, 2000);
     }, 3000);
 }
@@ -206,7 +216,7 @@ if (window.innerWidth <= 480) {
 
 // Add touch feedback for mobile
 if ('ontouchstart' in window) {
-    const buttons = document.querySelectorAll('.social-btn, .menu-btn');
+    const buttons = document.querySelectorAll('.social-btn, .menu-btn, .lang-btn');
     buttons.forEach(button => {
         button.addEventListener('touchstart', function() {
             this.style.opacity = '0.8';
@@ -217,3 +227,27 @@ if ('ontouchstart' in window) {
         });
     });
 }
+
+// Error handling
+window.addEventListener('error', function(e) {
+    console.log('Error handled:', e.message);
+});
+
+// Preload critical resources
+function preloadResources() {
+    const criticalResources = [
+        'https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700&display=swap',
+        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css'
+    ];
+    
+    criticalResources.forEach(url => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'style';
+        link.href = url;
+        document.head.appendChild(link);
+    });
+}
+
+// Initialize preloading
+preloadResources();

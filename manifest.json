@@ -1,7 +1,7 @@
 {
     "name": "Princess Coffee - قهوة الأميرة",
     "short_name": "Princess Coffee",
-    "description": "تذوق المذاق الملكي في كل رشفة",
+    "description": "تذوق المذاق الملكي في كل رشفة - Taste the royal flavor in every sip",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#1a4a47",
@@ -9,17 +9,17 @@
     "orientation": "portrait-primary",
     "icons": [
         {
-            "src": "profile-logo.png",
+            "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><circle cx='96' cy='96' r='85' fill='%23d4af37'/><circle cx='96' cy='96' r='75' fill='%23fff'/><text x='96' y='75' font-size='30' text-anchor='middle' fill='%23d4af37'>👑</text><text x='96' y='125' font-size='30' text-anchor='middle' fill='%23d4af37'>☕</text></svg>",
             "sizes": "192x192",
-            "type": "image/png"
+            "type": "image/svg+xml"
         },
         {
-            "src": "profile-logo.png",
+            "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><circle cx='256' cy='256' r='230' fill='%23d4af37'/><circle cx='256' cy='256' r='200' fill='%23fff'/><text x='256' y='200' font-size='80' text-anchor='middle' fill='%23d4af37'>👑</text><text x='256' y='320' font-size='80' text-anchor='middle' fill='%23d4af37'>☕</text></svg>",
             "sizes": "512x512",
-            "type": "image/png"
+            "type": "image/svg+xml"
         }
     ],
-    "categories": ["food", "business"],
+    "categories": ["food", "business", "lifestyle"],
     "lang": "ar",
     "dir": "rtl"
 }

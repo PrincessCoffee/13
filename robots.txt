@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /sw.js
 
 Sitemap: https://princesscoffee.github.io/13/sitemap.xml
