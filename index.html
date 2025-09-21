@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Princess Coffee - قهوة الأميرة | تذوق المذاق الملكي</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="قهوة الأميرة - تذوق المذاق الملكي في كل رشفة. قهوة مختصة عالية الجودة مع خدمة ملكية مميزة.">
+    <meta name="keywords"
+        content="قهوة, قهوة مختصة, Princess Coffee, قهوة الأميرة, كافيه, مشروبات ساخنة, اسبريسو, كابتشينو, لاتيه">
+    <meta name="author" content="Princess Coffee">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Princess Coffee - قهوة الأميرة">
+    <meta property="og:description" content="تذوق المذاق الملكي في كل رشفة - قهوة مختصة عالية الجودة">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://princesscoffee.github.io/13/">
+    <meta property="og:site_name" content="Princess Coffee">
+    <meta property="og:locale" content="ar_IQ">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Princess Coffee - قهوة الأميرة">
+    <meta name="twitter:description" content="تذوق المذاق الملكي في كل رشفة">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Preload important resources -->
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700&display=swap"
+        as="style">
+    <link rel="preload" href="style.css" as="style">
+</head>
+
+<body>
+    <div class="container">
+        <div class="profile-card">
+            <!-- Logo Section -->
+            <div class="logo-section">
+                <div class="logo-container">
+                    <div class="logo-circle">
+                        <div class="princess-icon">
+                            <i class="fas fa-crown"></i>
+                            <div class="coffee-beans">
+                                <i class="fas fa-coffee"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Title Section -->
+            <div class="title-section">
+                <h1 class="main-title">Princess Coffee</h1>
+                <h2 class="arabic-title">قهوة الأميرة</h2>
+                <p class="subtitle">تذوق المذاق الملكي في كل رشفة</p>
+            </div>
+
+            <!-- Social Links -->
+            <div class="social-links">
+                <a href="https://www.instagram.com/llooy_80?igsh=YWpudWk1eWNuY3Bj" target="_blank"
+                    class="social-btn instagram-btn">
+                    <i class="fab fa-instagram"></i>
+                    <span>انستغرام</span>
+                </a>
+
+                <a href="https://www.tiktok.com/@user4984378501180?_t=ZS-8zroZLu70lz&_r=1" target="_blank"
+                    class="social-btn tiktok-btn">
+                    <i class="fab fa-tiktok"></i>
+                    <span>تيك توك</span>
+                </a>
+
+                <a href="https://wa.me/9647731982199" target="_blank" class="social-btn whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>واتساب</span>
+                </a>
+            </div>
+
+            <!-- Menu Button -->
+            <div class="menu-section">
+                <button class="menu-btn" onclick="showMenu()">
+                    <i class="fas fa-utensils"></i>
+                    <span>عرض قائمتنا</span>
+                </button>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer">
+                <p>© 2025 قهوة الأميرة</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menu Modal -->
+    <div id="menuModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeMenu()">&times;</span>
+            <h2>قائمة قهوة الأميرة</h2>
+            <div class="menu-items">
+                <div class="menu-category">
+                    <h3>القهوة المختصة</h3>
+                    <div class="menu-item">
+                        <span class="item-name">إسبريسو الأميرة</span>
+                        <span class="item-price">15,000 د.ع</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name">كابتشينو ملكي</span>
+                        <span class="item-price">18,000 د.ع</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name">لاتيه الأميرة</span>
+                        <span class="item-price">20,000 د.ع</span>
+                    </div>
+                </div>
+
+                <div class="menu-category">
+                    <h3>المشروبات الباردة</h3>
+                    <div class="menu-item">
+                        <span class="item-name">آيس كوفي الأميرة</span>
+                        <span class="item-price">22,000 د.ع</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name">فرابيه ملكي</span>
+                        <span class="item-price">25,000 د.ع</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
