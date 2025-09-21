@@ -41,6 +41,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <!-- Preload important resources -->
+    <link rel="preload" href="logo.png" as="image">
     <link rel="preload"
         href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700&display=swap"
         as="style">
@@ -53,7 +54,15 @@
             <!-- Logo Section -->
             <div class="logo-section">
                 <div class="logo-container">
-                    <img src="logo.png" alt="Princess Coffee Logo" class="logo-image">
+                    <img src="logo.png" alt="Princess Coffee Logo" class="logo-image" loading="eager" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" onload="this.nextElementSibling.style.display='none';">
+                    <div class="logo-fallback" style="display: none;">
+                        <div class="princess-icon">
+                            <i class="fas fa-crown"></i>
+                            <div class="coffee-beans">
+                                <i class="fas fa-coffee"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 

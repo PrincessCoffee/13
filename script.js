@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Add floating animation to logo
-    const logo = document.querySelector('.logo-image');
+    const logo = document.querySelector('.logo-image') || document.querySelector('.logo-fallback');
     if (logo) {
         let floatDirection = 1;
         
@@ -144,6 +144,23 @@ document.addEventListener('DOMContentLoaded', function() {
             
             logo.style.transform = `translateY(${currentY + (floatDirection * 0.3)}px)`;
         }, 150);
+    }
+    
+    // Check if logo loaded successfully
+    const logoImg = document.querySelector('.logo-image');
+    const logoFallback = document.querySelector('.logo-fallback');
+    
+    if (logoImg && logoFallback) {
+        logoImg.addEventListener('load', function() {
+            logoFallback.style.display = 'none';
+            console.log('Logo loaded successfully');
+        });
+        
+        logoImg.addEventListener('error', function() {
+            logoImg.style.display = 'none';
+            logoFallback.style.display = 'flex';
+            console.log('Logo failed to load, showing fallback');
+        });
     }
     
     // Add sparkle effect
