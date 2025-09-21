@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Add floating animation to logo
-    const logo = document.querySelector('.profile-logo');
+    const logo = document.querySelector('.logo-circle');
     if (logo) {
         let floatDirection = 1;
         

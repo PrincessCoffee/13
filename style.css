@@ -102,23 +102,88 @@ body.ltr .menu-btn i {
     position: relative;
 }
 
-.profile-logo {
-    width: 200px;
-    height: auto;
-    max-width: 100%;
-    border-radius: 20px;
-    box-shadow: 
-        0 15px 30px rgba(0, 0, 0, 0.4),
-        0 0 25px rgba(212, 175, 55, 0.3);
-    border: 3px solid #d4af37;
-    animation: logoGlow 3s ease-in-out infinite alternate;
-    transition: transform 0.3s ease;
-    display: block;
-    object-fit: contain;
+.custom-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.profile-logo:hover {
-    transform: scale(1.05);
+.logo-circle {
+    width: 180px;
+    height: 180px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(240, 240, 240, 0.85));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 
+        0 15px 30px rgba(0, 0, 0, 0.4),
+        0 0 25px rgba(212, 175, 55, 0.4),
+        inset 0 2px 4px rgba(255, 255, 255, 0.8);
+    border: 4px solid #d4af37;
+    animation: logoGlow 3s ease-in-out infinite alternate;
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.logo-circle::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+    animation: shimmer 4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+    100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+}
+
+.logo-circle:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+.logo-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    position: relative;
+}
+
+.crown-icon {
+    font-size: 32px;
+    margin-bottom: 8px;
+    animation: bounce 2s ease-in-out infinite;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.logo-text-main {
+    font-family: 'Amiri', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a4a47;
+    text-align: center;
+    margin-bottom: 8px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.coffee-icon {
+    font-size: 24px;
+    animation: bounce 2s ease-in-out infinite 0.5s;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
 }
 
 .logo-fallback {
@@ -395,7 +460,20 @@ body.ltr .menu-btn i {
     font-size: 24px;
 }
 
-/* Removed menu categories - using simple list now */
+.menu-category {
+    margin-bottom: 25px;
+}
+
+.menu-category h3 {
+    color: #d4af37;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    border-bottom: 2px solid #d4af37;
+    padding-bottom: 8px;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
 
 .menu-item {
     display: flex;
@@ -437,9 +515,7 @@ body.ltr .menu-category h3 {
 
 /* Menu items styling */
 .menu-items {
-    display: grid;
-    gap: 8px;
-    max-height: 400px;
+    max-height: 450px;
     overflow-y: auto;
 }
 
@@ -447,18 +523,19 @@ body.ltr .menu-category h3 {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 15px 20px;
+    padding: 12px 15px;
     background: rgba(212, 175, 55, 0.1);
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    border-radius: 10px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 8px;
     transition: all 0.3s ease;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
 .menu-item:hover {
     background: rgba(212, 175, 55, 0.2);
     transform: translateX(5px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-color: rgba(212, 175, 55, 0.4);
 }
 
 body.ltr .menu-item:hover {
@@ -467,7 +544,7 @@ body.ltr .menu-item:hover {
 
 .item-name {
     color: #ffffff;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
     position: relative;
     width: 100%;
@@ -475,13 +552,13 @@ body.ltr .menu-item:hover {
 
 .item-name::before {
     content: '☕';
-    margin-left: 10px;
+    margin-left: 8px;
     color: #d4af37;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 body.ltr .item-name::before {
-    margin-right: 10px;
+    margin-right: 8px;
     margin-left: 0;
 }
 
@@ -500,8 +577,21 @@ body.ltr .item-name::before {
         font-size: 24px;
     }
     
-    .profile-logo {
-        width: 160px;
+    .logo-circle {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .crown-icon {
+        font-size: 28px;
+    }
+    
+    .logo-text-main {
+        font-size: 16px;
+    }
+    
+    .coffee-icon {
+        font-size: 20px;
     }
     
     .modal-content {
