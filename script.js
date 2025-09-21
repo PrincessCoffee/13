@@ -130,22 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Add floating animation to logo
-    const logo = document.querySelector('.logo-ring');
-    if (logo) {
-        let floatDirection = 1;
-        
-        setInterval(() => {
-            const currentTransform = logo.style.transform || 'translateY(0px)';
-            const currentY = parseFloat(currentTransform.match(/translateY\(([^)]+)\)/)?.[1] || 0);
-            
-            if (currentY >= 3) floatDirection = -1;
-            if (currentY <= -3) floatDirection = 1;
-            
-            const baseTransform = logo.style.transform.replace(/translateY\([^)]*\)/, '') || '';
-            logo.style.transform = `${baseTransform} translateY(${currentY + (floatDirection * 0.3)}px)`.trim();
-        }, 150);
-    }
+
     
     // Add sparkle effect
     createSparkles();
