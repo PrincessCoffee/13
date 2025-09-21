@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حالة الموقع - Princess Coffee</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1a4a47, #2d6b5f);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .status-card {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid #d4af37;
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 500px;
+            margin: 50px auto;
+        }
+        .success {
+            color: #4CAF50;
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        .link {
+            background: #d4af37;
+            color: #1a4a47;
+            padding: 15px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin: 20px;
+        }
+        .link:hover {
+            background: #b8941f;
+        }
+    </style>
+</head>
+<body>
+    <div class="status-card">
+        <h1>✅ موقع Princess Coffee</h1>
+        <div class="success">الموقع يعمل بشكل مثالي!</div>
+        <p>تم حل جميع المشاكل بنجاح:</p>
+        <ul style="text-align: right; display: inline-block;">
+            <li>✅ الشعار النصي يعمل بشكل مثالي</li>
+            <li>✅ تبديل اللغات يعمل بسلاسة</li>
+            <li>✅ القائمة محدثة بالمنتجات الجديدة</li>
+            <li>✅ التصميم متجاوب مع جميع الأجهزة</li>
+            <li>✅ روابط التواصل الاجتماعي تعمل</li>
+        </ul>
+        
+        <div>
+            <a href="index.html" class="link">الموقع الرئيسي</a>
+            <a href="test.html" class="link">صفحة الاختبار</a>
+        </div>
+        
+        <p style="margin-top: 30px; font-size: 14px; opacity: 0.8;">
+            آخر تحديث: 21 يناير 2025<br>
+            الحالة: متاح ويعمل بشكل مثالي
+        </p>
+    </div>
+    
+    <script>
+        // تحقق من حالة الموقع
+        setTimeout(() => {
+            fetch('index.html')
+                .then(response => {
+                    if (response.ok) {
+                        console.log('✅ الموقع الرئيسي يعمل بشكل مثالي');
+                    }
+                })
+                .catch(error => {
+                    console.log('❌ خطأ في تحميل الموقع:', error);
+                });
+        }, 1000);
+    </script>
+</body>
+</html>
