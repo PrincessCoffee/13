@@ -28,7 +28,7 @@
     <meta name="twitter:description" content="تذوق المذاق الملكي في كل رشفة">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="icon" type="image/png" href="profile-logo.png">
 
     <!-- PWA Manifest -->
     <link rel="manifest" href="manifest.json">
@@ -41,7 +41,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <!-- Preload important resources -->
-    <link rel="preload" href="logo.png" as="image">
+    <link rel="preload" href="profile-logo.png" as="image">
     <link rel="preload"
         href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700&display=swap"
         as="style">
@@ -54,14 +54,7 @@
             <!-- Logo Section -->
             <div class="logo-section">
                 <div class="logo-container">
-                    <div class="logo-design">
-                        <div class="logo-text-ar" data-ar="قهوة الأميرة" data-en="Princess Coffee">قهوة الأميرة</div>
-                        <div class="logo-text-en" data-ar="Princess Coffee" data-en="Princess Coffee">Princess Coffee</div>
-                        <div class="logo-decoration">
-                            <i class="fas fa-crown"></i>
-                            <i class="fas fa-coffee"></i>
-                        </div>
-                    </div>
+                    <img src="profile-logo.png" alt="Princess Coffee Logo" class="profile-logo" loading="eager">
                 </div>
             </div>
 
@@ -118,52 +111,41 @@
             <span class="close" onclick="closeMenu()">&times;</span>
             <h2 data-ar="قائمة قهوة الأميرة" data-en="Princess Coffee Menu">قائمة قهوة الأميرة</h2>
             <div class="menu-items">
-                <div class="menu-category">
-                    <h3 data-ar="المشروبات الساخنة" data-en="Hot Beverages">المشروبات الساخنة</h3>
-                    <div class="menu-item">
-                        <span class="item-name" data-ar="باردآيس كوفي" data-en="Paradise Coffee">باردآيس كوفي</span>
-                    </div>
-                    <div class="menu-item">
-                        <span class="item-name" data-ar="كابتشينو" data-en="Cappuccino">كابتشينو</span>
-                    </div>
-                    <div class="menu-item">
-                        <span class="item-name" data-ar="لاتيه حار" data-en="Hot Latte">لاتيه حار</span>
-                    </div>
-                    <div class="menu-item">
-                        <span class="item-name" data-ar="قهوة الأميرة" data-en="Princess Coffee">قهوة الأميرة</span>
-                    </div>
-                    <div class="menu-item">
-                        <span class="item-name" data-ar="قهوة سادة" data-en="Black Coffee">قهوة سادة</span>
-                    </div>
-                    <div class="menu-item">
-                        <span class="item-name" data-ar="قهوة وسط" data-en="Medium Coffee">قهوة وسط</span>
-                    </div>
+                <div class="menu-item">
+                    <span class="item-name" data-ar="باردآيس كوفي" data-en="Paradise Coffee">باردآيس كوفي</span>
                 </div>
-
-                <div class="menu-category">
-                    <h3 data-ar="القهوة المنكهة" data-en="Flavored Coffee">القهوة المنكهة</h3>
-                    <div class="menu-item">
-                        <span class="item-name" data-ar="قهوة جكليتية" data-en="Chocolate Coffee">قهوة جكليتية</span>
-                    </div>
-                    <div class="menu-item">
-                        <span class="item-name" data-ar="قهوة كالكسي" data-en="Galaxy Coffee">قهوة كالكسي</span>
-                    </div>
-                    <div class="menu-item">
-                        <span class="item-name" data-ar="قهوة باونتي" data-en="Bounty Coffee">قهوة باونتي</span>
-                    </div>
-                    <div class="menu-item">
-                        <span class="item-name" data-ar="قهوة عسلية" data-en="Honey Coffee">قهوة عسلية</span>
-                    </div>
-                    <div class="menu-item">
-                        <span class="item-name" data-ar="قهوة من السما" data-en="Heavenly Coffee">قهوة من السما</span>
-                    </div>
+                <div class="menu-item">
+                    <span class="item-name" data-ar="كابتشينو" data-en="Cappuccino">كابتشينو</span>
                 </div>
-
-                <div class="menu-category">
-                    <h3 data-ar="المشروبات الأخرى" data-en="Other Beverages">المشروبات الأخرى</h3>
-                    <div class="menu-item">
-                        <span class="item-name" data-ar="چاي كرك" data-en="Karak Tea">چاي كرك</span>
-                    </div>
+                <div class="menu-item">
+                    <span class="item-name" data-ar="لاتيه حار" data-en="Hot Latte">لاتيه حار</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name" data-ar="قهوة الأميرة" data-en="Princess Coffee">قهوة الأميرة</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name" data-ar="قهوة سادة" data-en="Black Coffee">قهوة سادة</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name" data-ar="قهوة وسط" data-en="Medium Coffee">قهوة وسط</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name" data-ar="قهوة جكليتية" data-en="Chocolate Coffee">قهوة جكليتية</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name" data-ar="قهوة كالكسي" data-en="Galaxy Coffee">قهوة كالكسي</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name" data-ar="قهوة باونتي" data-en="Bounty Coffee">قهوة باونتي</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name" data-ar="قهوة عسلية" data-en="Honey Coffee">قهوة عسلية</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name" data-ar="قهوة من السما" data-en="Heavenly Coffee">قهوة من السما</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name" data-ar="چاي كرك" data-en="Karak Tea">چاي كرك</span>
                 </div>
             </div>
         </div>
