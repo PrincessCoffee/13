@@ -12,13 +12,22 @@ function switchLanguage(lang) {
         }
     });
     
-    // Update all elements with language data
+    // Update all elements with language data with smooth transition
     document.querySelectorAll('[data-ar][data-en]').forEach(element => {
-        if (lang === 'ar') {
-            element.textContent = element.dataset.ar;
-        } else {
-            element.textContent = element.dataset.en;
-        }
+        // Add fade effect for smooth transition
+        element.style.opacity = '0.5';
+        element.style.transform = 'translateY(-5px)';
+        
+        setTimeout(() => {
+            if (lang === 'ar') {
+                element.textContent = element.dataset.ar;
+            } else {
+                element.textContent = element.dataset.en;
+            }
+            
+            element.style.opacity = '1';
+            element.style.transform = 'translateY(0)';
+        }, 150);
     });
     
     // Update document direction and language
@@ -122,18 +131,20 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Add floating animation to logo
-    const logo = document.querySelector('.logo-circle');
-    let floatDirection = 1;
-    
-    setInterval(() => {
-        const currentTransform = logo.style.transform || 'translateY(0px)';
-        const currentY = parseFloat(currentTransform.match(/translateY\(([^)]+)\)/)?.[1] || 0);
+    const logo = document.querySelector('.logo-image');
+    if (logo) {
+        let floatDirection = 1;
         
-        if (currentY >= 5) floatDirection = -1;
-        if (currentY <= -5) floatDirection = 1;
-        
-        logo.style.transform = `translateY(${currentY + (floatDirection * 0.5)}px)`;
-    }, 100);
+        setInterval(() => {
+            const currentTransform = logo.style.transform || 'translateY(0px)';
+            const currentY = parseFloat(currentTransform.match(/translateY\(([^)]+)\)/)?.[1] || 0);
+            
+            if (currentY >= 3) floatDirection = -1;
+            if (currentY <= -3) floatDirection = 1;
+            
+            logo.style.transform = `translateY(${currentY + (floatDirection * 0.3)}px)`;
+        }, 150);
+    }
     
     // Add sparkle effect
     createSparkles();
