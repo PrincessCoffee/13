@@ -13,6 +13,21 @@ body {
     justify-content: center;
     padding: 20px;
     direction: rtl;
+    transition: direction 0.3s ease;
+}
+
+body.ltr {
+    direction: ltr;
+}
+
+body.ltr .social-btn i {
+    margin-right: 10px;
+    margin-left: 0;
+}
+
+body.ltr .menu-btn i {
+    margin-right: 10px;
+    margin-left: 0;
 }
 
 .container {
@@ -42,6 +57,38 @@ body {
     bottom: 0;
     background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
     pointer-events: none;
+}
+
+/* Language Toggle */
+.language-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.lang-btn {
+    padding: 8px 16px;
+    background: transparent;
+    border: 2px solid #d4af37;
+    border-radius: 20px;
+    color: #d4af37;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Cairo', sans-serif;
+}
+
+.lang-btn:hover {
+    background: rgba(212, 175, 55, 0.1);
+    transform: translateY(-1px);
+}
+
+.lang-btn.active {
+    background: #d4af37;
+    color: #1a4a47;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Logo Section */
@@ -343,6 +390,61 @@ body {
     font-size: 16px;
 }
 
+/* Language-specific styles */
+body.ltr .main-title,
+body.ltr .arabic-title,
+body.ltr .subtitle {
+    font-family: 'Arial', sans-serif;
+}
+
+body.ltr .modal-content h2,
+body.ltr .menu-category h3 {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Menu items styling */
+.menu-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    transition: all 0.3s ease;
+}
+
+.menu-item:hover {
+    background: rgba(212, 175, 55, 0.1);
+    padding-left: 10px;
+    border-radius: 8px;
+}
+
+body.ltr .menu-item:hover {
+    padding-right: 10px;
+    padding-left: 0;
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+.item-name {
+    color: #ffffff;
+    font-size: 16px;
+    position: relative;
+}
+
+.item-name::before {
+    content: '☕';
+    margin-left: 8px;
+    color: #d4af37;
+    font-size: 14px;
+}
+
+body.ltr .item-name::before {
+    margin-right: 8px;
+    margin-left: 0;
+}
+
 /* Responsive Design */
 @media (max-width: 480px) {
     .profile-card {
@@ -375,6 +477,15 @@ body {
         margin: 10% auto;
         padding: 20px;
         width: 95%;
+    }
+    
+    .language-toggle {
+        gap: 5px;
+    }
+    
+    .lang-btn {
+        padding: 6px 12px;
+        font-size: 12px;
     }
 }
 

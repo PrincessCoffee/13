@@ -8,9 +8,9 @@
 
     <!-- SEO Meta Tags -->
     <meta name="description"
-        content="قهوة الأميرة - تذوق المذاق الملكي في كل رشفة. قهوة مختصة عالية الجودة مع خدمة ملكية مميزة.">
+        content="قهوة الأميرة - تذوق المذاق الملكي في كل رشفة. Princess Coffee - Taste the royal flavor in every sip. قهوة مختصة عالية الجودة مع خدمة ملكية مميزة.">
     <meta name="keywords"
-        content="قهوة, قهوة مختصة, Princess Coffee, قهوة الأميرة, كافيه, مشروبات ساخنة, اسبريسو, كابتشينو, لاتيه">
+        content="قهوة, قهوة مختصة, Princess Coffee, قهوة الأميرة, كافيه, مشروبات ساخنة, اسبريسو, كابتشينو, لاتيه, coffee, specialty coffee, cafe, hot beverages, espresso, cappuccino, latte, paradise coffee, karak tea, باردآيس كوفي, چاي كرك">
     <meta name="author" content="Princess Coffee">
     <meta name="robots" content="index, follow">
 
@@ -65,11 +65,17 @@
                 </div>
             </div>
 
+            <!-- Language Toggle -->
+            <div class="language-toggle">
+                <button class="lang-btn active" data-lang="ar" onclick="switchLanguage('ar')">العربية</button>
+                <button class="lang-btn" data-lang="en" onclick="switchLanguage('en')">English</button>
+            </div>
+
             <!-- Title Section -->
             <div class="title-section">
-                <h1 class="main-title">Princess Coffee</h1>
-                <h2 class="arabic-title">قهوة الأميرة</h2>
-                <p class="subtitle">تذوق المذاق الملكي في كل رشفة</p>
+                <h1 class="main-title" data-ar="Princess Coffee" data-en="Princess Coffee">Princess Coffee</h1>
+                <h2 class="arabic-title" data-ar="قهوة الأميرة" data-en="Princess Coffee">قهوة الأميرة</h2>
+                <p class="subtitle" data-ar="تذوق المذاق الملكي في كل رشفة" data-en="Taste the royal flavor in every sip">تذوق المذاق الملكي في كل رشفة</p>
             </div>
 
             <!-- Social Links -->
@@ -77,18 +83,18 @@
                 <a href="https://www.instagram.com/llooy_80?igsh=YWpudWk1eWNuY3Bj" target="_blank"
                     class="social-btn instagram-btn">
                     <i class="fab fa-instagram"></i>
-                    <span>انستغرام</span>
+                    <span data-ar="انستغرام" data-en="Instagram">انستغرام</span>
                 </a>
 
                 <a href="https://www.tiktok.com/@user4984378501180?_t=ZS-8zroZLu70lz&_r=1" target="_blank"
                     class="social-btn tiktok-btn">
                     <i class="fab fa-tiktok"></i>
-                    <span>تيك توك</span>
+                    <span data-ar="تيك توك" data-en="TikTok">تيك توك</span>
                 </a>
 
                 <a href="https://wa.me/9647731982199" target="_blank" class="social-btn whatsapp-btn">
                     <i class="fab fa-whatsapp"></i>
-                    <span>واتساب</span>
+                    <span data-ar="واتساب" data-en="WhatsApp">واتساب</span>
                 </a>
             </div>
 
@@ -96,13 +102,13 @@
             <div class="menu-section">
                 <button class="menu-btn" onclick="showMenu()">
                     <i class="fas fa-utensils"></i>
-                    <span>عرض قائمتنا</span>
+                    <span data-ar="عرض قائمتنا" data-en="View Our Menu">عرض قائمتنا</span>
                 </button>
             </div>
 
             <!-- Footer -->
             <div class="footer">
-                <p>© 2025 قهوة الأميرة</p>
+                <p data-ar="© 2025 قهوة الأميرة" data-en="© 2025 Princess Coffee">© 2025 قهوة الأميرة</p>
             </div>
         </div>
     </div>
@@ -111,33 +117,53 @@
     <div id="menuModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeMenu()">&times;</span>
-            <h2>قائمة قهوة الأميرة</h2>
+            <h2 data-ar="قائمة قهوة الأميرة" data-en="Princess Coffee Menu">قائمة قهوة الأميرة</h2>
             <div class="menu-items">
                 <div class="menu-category">
-                    <h3>القهوة المختصة</h3>
+                    <h3 data-ar="المشروبات الساخنة" data-en="Hot Beverages">المشروبات الساخنة</h3>
                     <div class="menu-item">
-                        <span class="item-name">إسبريسو الأميرة</span>
-                        <span class="item-price">15,000 د.ع</span>
+                        <span class="item-name" data-ar="باردآيس كوفي" data-en="Paradise Coffee">باردآيس كوفي</span>
                     </div>
                     <div class="menu-item">
-                        <span class="item-name">كابتشينو ملكي</span>
-                        <span class="item-price">18,000 د.ع</span>
+                        <span class="item-name" data-ar="كابتشينو" data-en="Cappuccino">كابتشينو</span>
                     </div>
                     <div class="menu-item">
-                        <span class="item-name">لاتيه الأميرة</span>
-                        <span class="item-price">20,000 د.ع</span>
+                        <span class="item-name" data-ar="لاتيه حار" data-en="Hot Latte">لاتيه حار</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name" data-ar="قهوة الأميرة" data-en="Princess Coffee">قهوة الأميرة</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name" data-ar="قهوة سادة" data-en="Black Coffee">قهوة سادة</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name" data-ar="قهوة وسط" data-en="Medium Coffee">قهوة وسط</span>
                     </div>
                 </div>
 
                 <div class="menu-category">
-                    <h3>المشروبات الباردة</h3>
+                    <h3 data-ar="القهوة المنكهة" data-en="Flavored Coffee">القهوة المنكهة</h3>
                     <div class="menu-item">
-                        <span class="item-name">آيس كوفي الأميرة</span>
-                        <span class="item-price">22,000 د.ع</span>
+                        <span class="item-name" data-ar="قهوة جكليتية" data-en="Chocolate Coffee">قهوة جكليتية</span>
                     </div>
                     <div class="menu-item">
-                        <span class="item-name">فرابيه ملكي</span>
-                        <span class="item-price">25,000 د.ع</span>
+                        <span class="item-name" data-ar="قهوة كالكسي" data-en="Galaxy Coffee">قهوة كالكسي</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name" data-ar="قهوة باونتي" data-en="Bounty Coffee">قهوة باونتي</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name" data-ar="قهوة عسلية" data-en="Honey Coffee">قهوة عسلية</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name" data-ar="قهوة من السما" data-en="Heavenly Coffee">قهوة من السما</span>
+                    </div>
+                </div>
+
+                <div class="menu-category">
+                    <h3 data-ar="المشروبات الأخرى" data-en="Other Beverages">المشروبات الأخرى</h3>
+                    <div class="menu-item">
+                        <span class="item-name" data-ar="چاي كرك" data-en="Karak Tea">چاي كرك</span>
                     </div>
                 </div>
             </div>

@@ -1,3 +1,43 @@
+// Language switching functionality
+let currentLanguage = 'ar';
+
+function switchLanguage(lang) {
+    currentLanguage = lang;
+    
+    // Update active button
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.dataset.lang === lang) {
+            btn.classList.add('active');
+        }
+    });
+    
+    // Update all elements with language data
+    document.querySelectorAll('[data-ar][data-en]').forEach(element => {
+        if (lang === 'ar') {
+            element.textContent = element.dataset.ar;
+        } else {
+            element.textContent = element.dataset.en;
+        }
+    });
+    
+    // Update document direction and language
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    
+    // Update body class for styling
+    document.body.className = lang === 'ar' ? 'rtl' : 'ltr';
+    
+    // Save language preference
+    localStorage.setItem('preferredLanguage', lang);
+}
+
+// Load saved language preference
+document.addEventListener('DOMContentLoaded', function() {
+    const savedLang = localStorage.getItem('preferredLanguage') || 'ar';
+    switchLanguage(savedLang);
+});
+
 // Modal functionality
 function showMenu() {
     const modal = document.getElementById('menuModal');
@@ -57,6 +97,18 @@ document.addEventListener('DOMContentLoaded', function() {
         
         button.addEventListener('mouseleave', function() {
             this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+    
+    // Add hover effects to menu items
+    const menuItems = document.querySelectorAll('.menu-item');
+    menuItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateX(5px)';
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateX(0)';
         });
     });
     
